@@ -1,48 +1,44 @@
-// src/components/Navbar.js
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-const NavbarContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const Nav = styled.nav`
   background-color: #dde5b6;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 `;
 
-const NavButton = styled(Link)`
+const Form = styled.form`
+  display: flex;
+  justify-content: flex-start;
+  background-color: #dde5b6;
+`;
+
+const Button = styled.button`
   margin-right: 10px;
   padding: 10px 20px;
   background-color: transparent;
-  border: 1px solid #3a5a40;
-  color: #3a5a40;
+  color: #132a13;
+  border: none;px
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
   &:hover {
-    background-color: #3a5a40;
-    color: white;
+    background-color: #132a13;
   }
 `;
 
-const SmallButton = styled(NavButton)`
-  padding: 5px 10px;
-  font-size: 0.8rem;
-`;
+const navbar = () => {
+  const scrollToQuestionnaire = () => {
+    document.getElementById('questionnaire-section').scrollIntoView({ behavior: 'smooth' });
+  };
 
-const Navbar = () => {
   return (
-    <NavbarContainer className="navbar bg-body-">
-      <form className="container-fluid justify-content-start">
-        <NavButton to="/">HOME</NavButton>
-        <SmallButton to="/">Carbon footprint Calculator</SmallButton>
-      </form>
-    </NavbarContainer>
+    <Nav className="navbar bg-body-dde5b6">
+      <Form className="container-fluid justify-content-start">
+        <Button className="btn btn-outline-success me-2" type="button" onClick={scrollToQuestionnaire}>
+          Calculate Your Footprint
+        </Button>
+      </Form>
+    </Nav>
   );
 };
 
-export default Navbar;
+export default navbar;

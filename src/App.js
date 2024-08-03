@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import Navbar from './components/navbar';
+import Homepage from './Components/Homepage';
+import Navbar from './Components/navbar';
 import styled from 'styled-components';
 
 const Container = styled.div`
