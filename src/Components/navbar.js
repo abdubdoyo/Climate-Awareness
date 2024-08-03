@@ -30,6 +30,7 @@ const navbar = () => {
     document.getElementById('questionnaire-section').scrollIntoView({ behavior: 'smooth' });
   };
 
+  
   return (
     <Nav className="navbar bg-body-dde5b6">
       <Form className="container-fluid justify-content-start">
@@ -39,6 +40,7 @@ const navbar = () => {
       </Form>
     </Nav>
   );
+
 };
 
 export default navbar;
