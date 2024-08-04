@@ -20,7 +20,10 @@ function App() {
     localStorage.setItem('isAuthenticated', 'true');
     setIsAuthenticated(true);
   };
+<<<<<<< HEAD
   
+=======
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -35,14 +38,28 @@ function App() {
     <Router>
       <Container>
         <Routes>
+<<<<<<< HEAD
           <Route path="/login" element={<HtmlContent />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={isAuthenticated ? <Homepage onLogout={handleLogout} /> : <Navigate to="/login" />} />
         </Routes>
       </Container>
       
+=======
+          <Route path="/" element={isAuthenticated ? <Homepage onLogout={handleLogout} /> : <Navigate to="/login" />} />
+          <Route path="/signup" element={isAuthenticated ? <Navigate to="/" /> : <SignUp onSignup={handleLogin} />} />
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <HtmlContent onLogin={handleLogin} />} />
+        
+        </Routes>
+      </Container>
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
     </Router>
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d

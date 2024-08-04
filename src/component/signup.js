@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 
-function SignupPage() {
+
+function SignupPage({ onSignup }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,14 +19,18 @@ function SignupPage() {
       setError('Passwords do not match');
     } else {
       setError('');
-      // Handle form submission logic here
       console.log('Username:', username);
       console.log('Password:', password);
+<<<<<<< HEAD
 
       // Navigate to the homepage after successful sign-up
       navigate('/');
+=======
+      navigate('/'); // Navigate to homepage
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
     }
   };
+  
 
   return (
     <div>

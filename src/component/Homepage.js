@@ -1,7 +1,9 @@
+
 import React from 'react';
 import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
+<<<<<<< HEAD
 import backgroundVideo from '../assets/background_video.mp4'; 
 import Questionnaire from './Questionnaire';  
 import Navbar from './Navbar';
@@ -16,6 +18,24 @@ const Container = styled.div`
   height: 100vh; 
   overflow-x: hidden;
   overflow-y: auto;
+=======
+import backgroundVideo from '../assets/background_video.mp4';
+import Questionnaire from './Questionnaire';
+import Navbar from './navbar';
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+background-color: #adc178;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+width: 100vw;
+height: 100vh; /* Ensure it takes at least the full height of the viewport */
+overflow-x: hidden;
+overflow-y: scroll;
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 `;
 
 const HeroSection = styled.section`
@@ -24,6 +44,7 @@ const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   min-height: 100vh;
   color: #132a13;
   text-align: center;
@@ -40,6 +61,15 @@ const VideoBackground = styled.video`
   object-fit: cover;
   transform: translate(-50%, -50%);
 `;
+=======
+  height: auto;
+  color: #132a13;
+  text-align: center;
+  overflow - x: hidden;
+  overflow - y: scroll;
+`;
+
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 
 const Title = styled.h1`
   font-family: Jazz LET, fantasy;
@@ -65,6 +95,7 @@ const Section = styled.section`
   min-height: 100vh;
   text-align: center;
   &:nth-child(odd) {
+<<<<<<< HEAD
     width: 100vw;
     background-color: #dde5b6;
     height: 200vh;
@@ -72,6 +103,12 @@ const Section = styled.section`
   &:nth-child(even) {
     width: 100vw;
     background-color: #adc178;
+=======
+    background-color: #adc178;
+  }
+  &:nth-child(even) {
+    background-color: #dde5b6;
+>>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
   }
 `;
 
