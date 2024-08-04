@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
-import backgroundVideo from '../assets/background_video.mp4'; 
 import Questionnaire from './Questionnaire';  
 import navbar from './navbar';
 
@@ -18,22 +17,14 @@ const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; // Changed from height to min-height
   color: #132a13;
   text-align: center;
   overflow: hidden;
 `;
 
-const VideoBackground = styled.video`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-`;
+
+
 
 const Title = styled.h1`
   font-size: 3.5rem;
@@ -79,12 +70,8 @@ const Image = styled.img`
 const Homepage = () => {
   return (
     <Container>
-      <navbar />
+      <navbar/>
       <HeroSection>
-        <VideoBackground autoPlay loop muted>
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </VideoBackground>
         <Title>CLIMATE CHANGE AWARENESS</Title>
         <Subtitle>Carbon Footprint Calculator</Subtitle>
       </HeroSection>
