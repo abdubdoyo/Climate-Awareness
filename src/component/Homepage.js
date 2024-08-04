@@ -1,11 +1,11 @@
- 
+
 import React from 'react';
 import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
-import backgroundVideo from '../assets/background_video.mp4'; 
-import Questionnaire from './Questionnaire';  
-import Navbar from './Navbar'; 
+import backgroundVideo from '../assets/background_video.mp4';
+import Questionnaire from './Questionnaire';
+import Navbar from './navbar';
 
 const Container = styled.div`
 display: flex;
