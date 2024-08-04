@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
 import backgroundVideo from '../assets/background_video.mp4'; 
-import Questionnaire from './Questionnaire';
+import Questionnaire from './Questionnaire';  
 import navbar from './navbar';
 
 const Container = styled.div`

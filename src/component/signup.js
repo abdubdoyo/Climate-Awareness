@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SignupPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,9 +14,9 @@ function SignupPage() {
       setError('Passwords do not match');
     } else {
       setError('');
-      // Handle form submission logic here
       console.log('Username:', username);
       console.log('Password:', password);
+      navigate('/'); // Navigate to homepage after successful form submission
     }
   };
 
@@ -60,7 +62,7 @@ function SignupPage() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           /><br /><br />
-          <button type="submit">SIGN UP</button>
+          <button type="submit">SIGN UP</button> {/* Use type="submit" */}
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>
