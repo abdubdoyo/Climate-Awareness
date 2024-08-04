@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
 
 
 function SignupPage({ onSignup }) {
@@ -33,7 +33,7 @@ function SignupPage({ onSignup }) {
         </video>
       </div>
       <div className="content">
-      
+
       </div>
       <div className="signup-container">
         <h2>S I G N U P</h2>
@@ -65,7 +65,9 @@ function SignupPage({ onSignup }) {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           /><br /><br />
-          <button type="submit">SIGN UP</button>
+          <Link to="/">
+          <button type="submit" >SIGN UP</button>
+          </Link>
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>
