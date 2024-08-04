@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<HtmlContent />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={isAuthenticated ? <Homepage onLogout={handleLogout} /> : <Navigate to="/login" />} />
+          <Route path="/" element={<Homepage/>} />
         </Routes>
       </Container>
 

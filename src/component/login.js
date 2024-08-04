@@ -60,8 +60,10 @@ const HtmlContent = ({ onLogin }) => {
             required
           />
           {errors.password && <p className="error">{errors.password}</p>}
-
+          <Link to="/">
           <button type="submit">LOGIN</button>
+          </Link>
+
         </form>
         <a href="/forgot-password" className="forgot-password">Forgot Password?</a>
         <p>Not a Member? <Link to="/signup">Sign Up</Link></p>
