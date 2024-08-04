@@ -34,8 +34,7 @@ const HtmlContent = ({ onLogin }) => {
         </video>
       </div>
       <div className="content">
-        <h1></h1>
-        <p></p>
+
       </div>
       <div className="login-container">
         <h2>L O G I N</h2>
@@ -50,7 +49,7 @@ const HtmlContent = ({ onLogin }) => {
             required
           />
           {errors.email && <p className="error">{errors.email}</p>}
-          
+
           <label htmlFor="password">PASSWORD</label>
           <input
             type="password"
@@ -61,7 +60,7 @@ const HtmlContent = ({ onLogin }) => {
             required
           />
           {errors.password && <p className="error">{errors.password}</p>}
-          
+
           <button type="submit">LOGIN</button>
         </form>
         <a href="/forgot-password" className="forgot-password">Forgot Password?</a>

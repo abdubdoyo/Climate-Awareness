@@ -16,11 +16,6 @@ const Container = styled.div`
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('isAuthenticated') === 'true');
 
-  const handleLogin = () => {
-    localStorage.setItem('isAuthenticated', 'true');
-    setIsAuthenticated(true);
-  };
-  
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -40,7 +35,7 @@ function App() {
           <Route path="/" element={isAuthenticated ? <Homepage onLogout={handleLogout} /> : <Navigate to="/login" />} />
         </Routes>
       </Container>
-      
+
     </Router>
   );
 }

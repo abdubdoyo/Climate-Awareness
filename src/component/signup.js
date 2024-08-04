@@ -33,8 +33,7 @@ function SignupPage({ onSignup }) {
         </video>
       </div>
       <div className="content">
-        <h1></h1>
-        <p></p>
+      
       </div>
       <div className="signup-container">
         <h2>S I G N U P</h2>
