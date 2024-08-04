@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function SignupPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +17,9 @@ function SignupPage() {
       // Handle form submission logic here
       console.log('Username:', username);
       console.log('Password:', password);
+
+      // Navigate to the homepage after successful sign-up
+      navigate('/');
     }
   };
 
@@ -69,3 +74,4 @@ function SignupPage() {
 }
 
 export default SignupPage;
+

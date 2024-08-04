@@ -3,13 +3,19 @@ import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
 import backgroundVideo from '../assets/background_video.mp4'; 
-import Questionnaire from './Questionnaire';
-import navbar from './navbar';
+import Questionnaire from './Questionnaire';  
+import Navbar from './Navbar';
 
 const Container = styled.div`
-  background-color: #adc178;
-  color: #132a13;
-  font-family: 'Arial, sans-serif';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  height: 100vh; 
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const HeroSection = styled.section`
@@ -18,33 +24,37 @@ const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   color: #132a13;
   text-align: center;
-  overflow: hidden;
+  overflow - x: hidden;
+  overflow - y: auto;
 `;
 
 const VideoBackground = styled.video`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: -1;
 `;
 
 const Title = styled.h1`
+  font-family: Jazz LET, fantasy;
   font-size: 3.5rem;
   margin-bottom: 20px;
   z-index: 1;
+  color: #adc178;
 `;
 
 const Subtitle = styled.h2`
+  color: #132a13;
   font-size: 2rem;
   margin-bottom: 20px;
   z-index: 1;
+  -webkit-text-stroke: 0.5px #132a13;
 `;
 
 const Section = styled.section`
@@ -55,14 +65,18 @@ const Section = styled.section`
   min-height: 100vh;
   text-align: center;
   &:nth-child(odd) {
+    width: 100vw;
     background-color: #dde5b6;
+    height: 200vh;
   }
   &:nth-child(even) {
+    width: 100vw;
     background-color: #adc178;
   }
 `;
 
 const Description = styled.p`
+  color: #132a13;
   font-size: 1.2rem;
   margin: 20px 0;
   max-width: 800px;
@@ -79,14 +93,13 @@ const Image = styled.img`
 const Homepage = () => {
   return (
     <Container>
-      <navbar />
+      <Navbar />
       <HeroSection>
-        <VideoBackground autoPlay loop muted>
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </VideoBackground>
         <Title>CLIMATE CHANGE AWARENESS</Title>
         <Subtitle>Carbon Footprint Calculator</Subtitle>
+        <VideoBackground autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+        </VideoBackground>
       </HeroSection>
       <Section>
         <Subtitle>What is a Carbon Footprint?</Subtitle>
