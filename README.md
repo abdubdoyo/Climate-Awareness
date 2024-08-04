@@ -2,7 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+First: Install npm using :
+        npm install
+
 ## Available Scripts
+
 
 In the project directory, you can run:
 
@@ -11,60 +15,44 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project Description
 
-### `npm run build`
+Creating the Climate Change Awareness web application has been a rewarding experience that has offered valuable insights into both the development process and the importance of environmental advocacy.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Technical Challenges:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Integration of Diverse Technologies: Combining React with ruby on rails required careful planning and implementation to ensure seamless communication between the frontend and backend. Handling asynchronous operations and managing state across different components were particularly challenging.
+Responsive Design: Ensuring that the application was accessible and visually appealing on various devices and screen sizes involved meticulous CSS work and testing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Insipiration
+The inspiration for creating a climate awareness website stems from the urgent need to address the global climate crisis and the belief that education and community action can drive significant change.Some key motivations were:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Increasing Climate Change Awareness
+Promoting Sustainable Practices
+Harnessing Technology for Good
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+How we built it:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Research: Extensive research was conducted to gather information about climate change, its impacts, and best practices for sustainable living.
+Design: Emphasis was placed on ensuring an intuitive and user-friendly experience. We designed the navigation to be straightforward, with clear pathways to different sections of the site.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Technologies Used:
+Frontend: React was chosen for its efficiency in building dynamic and responsive user interfaces.
 
-## Learn More
+Backend: Ruby on rails
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Challenges we ran into:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Using github as a group: It was hard challenge to get used to
+github and setting different branches for our componenets and we definitely had a fair share of merging issues.
+Integrating backend with frontend: This task was really difficult as this is our first time
+using ruby on rails as our backend.
 
-### Code Splitting
+Accomplishments that we're proud of:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+User Interface: We created a nice looking User interface even though that my team and I have little to no experience in building a website with react.
+Carbon Footprint Calculator: We are also pround of how our carbon footprint calculator
+functionality has worked out.
