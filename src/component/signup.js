@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-=======
-import { useNavigate } from 'react-router-dom';
->>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 
 
 function SignupPage({ onSignup }) {
@@ -21,13 +17,9 @@ function SignupPage({ onSignup }) {
       setError('');
       console.log('Username:', username);
       console.log('Password:', password);
-<<<<<<< HEAD
 
       // Navigate to the homepage after successful sign-up
       navigate('/');
-=======
-      navigate('/'); // Navigate to homepage
->>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
     }
   };
   

@@ -22,11 +22,6 @@ const HtmlContent = ({ onLogin }) => {
       return;
     }
 
-<<<<<<< HEAD
-=======
-    // Handle login logic
-    // Here, just simulate a successful login
->>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
     onLogin();
   };
 

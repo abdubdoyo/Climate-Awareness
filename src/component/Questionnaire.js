@@ -70,7 +70,6 @@ const ErrorMessage = styled.p`
   font-weight: bold;
 `;
 
-<<<<<<< HEAD
 const List = styled.ul`
   list-style-type: disc;
   padding-left: 20px;
@@ -81,8 +80,6 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `;
 
-=======
->>>>>>> c5e3bf32ff1859b0f50bd8a4221ddb25036f901d
 const Questionnaire = () => {
   const [transport, setTransport] = useState('');
   const [carType, setCarType] = useState('');
@@ -218,3 +215,4 @@ const Questionnaire = () => {
 };
 
 export default Questionnaire;
+
