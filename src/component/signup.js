@@ -22,7 +22,7 @@ function SignupPage({ onSignup }) {
       navigate('/');
     }
   };
-  
+
 
   return (
     <div>
@@ -39,7 +39,7 @@ function SignupPage({ onSignup }) {
       <div className="signup-container">
         <h2>S I G N U P</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">USERNAME:</label><br />
+          <label htmlFor="username">EMAIL:</label><br />
           <input
             type="text"
             id="username"
