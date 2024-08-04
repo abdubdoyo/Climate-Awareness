@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -16,8 +17,8 @@ const Button = styled.button`
   margin-right: 10px;
   padding: 10px 20px;
   background-color: transparent;
-  color: #132a13;
-  border: none;px
+  color: #dde5b6;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   &:hover {
@@ -25,23 +26,22 @@ const Button = styled.button`
   }
 `;
 
-const navbar = () => {
+const Navbar = () => {
   const scrollToQuestionnaire = () => {
     document.getElementById('questionnaire-section').scrollIntoView({ behavior: 'smooth' });
   };
 
-  
   return (
-    <Nav className="navbar bg-body-dde5b6">
-      <Form className="container-fluid justify-content-start">
-        <Button className="btn btn-outline-success me-2" type="button" onClick={scrollToQuestionnaire}>
+    <Nav>
+      <Form>
+        <Button type="button" onClick={scrollToQuestionnaire}>
           Calculate Your Footprint
         </Button>
       </Form>
     </Nav>
   );
-
 };
 
-export default navbar;
-  
+export default Navbar;
+
+

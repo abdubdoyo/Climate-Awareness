@@ -1,15 +1,24 @@
+ 
 import React from 'react';
 import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
 import backgroundVideo from '../assets/background_video.mp4'; 
 import Questionnaire from './Questionnaire';  
-import navbar from './navbar';
+import Navbar from './Navbar'; 
 
 const Container = styled.div`
-  background-color: #adc178;
-  color: #132a13;
-  font-family: 'Arial, sans-serif';
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+background-color: #adc178;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+width: 100vw;
+height: 100vh; /* Ensure it takes at least the full height of the viewport */
+overflow-x: hidden;
+overflow-y: scroll;
 `;
 
 const HeroSection = styled.section`
@@ -18,22 +27,13 @@ const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   color: #132a13;
   text-align: center;
-  overflow: hidden;
+  overflow - x: hidden;
+  overflow - y: scroll;
 `;
 
-const VideoBackground = styled.video`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-`;
 
 const Title = styled.h1`
   font-size: 3.5rem;
@@ -55,10 +55,10 @@ const Section = styled.section`
   min-height: 100vh;
   text-align: center;
   &:nth-child(odd) {
-    background-color: #dde5b6;
+    background-color: #adc178;
   }
   &:nth-child(even) {
-    background-color: #adc178;
+    background-color: #dde5b6;
   }
 `;
 
@@ -79,12 +79,8 @@ const Image = styled.img`
 const Homepage = () => {
   return (
     <Container>
-      <navbar />
+      <Navbar />
       <HeroSection>
-        <VideoBackground autoPlay loop muted>
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </VideoBackground>
         <Title>CLIMATE CHANGE AWARENESS</Title>
         <Subtitle>Carbon Footprint Calculator</Subtitle>
       </HeroSection>

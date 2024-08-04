@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SignupPage() {
+
+function SignupPage({ onSignup }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -16,9 +17,10 @@ function SignupPage() {
       setError('');
       console.log('Username:', username);
       console.log('Password:', password);
-      navigate('/'); // Navigate to homepage after successful form submission
+      navigate('/'); // Navigate to homepage
     }
   };
+  
 
   return (
     <div>
@@ -62,7 +64,7 @@ function SignupPage() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           /><br /><br />
-          <button type="submit">SIGN UP</button> {/* Use type="submit" */}
+          <button type="submit">SIGN UP</button>
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>
@@ -71,3 +73,4 @@ function SignupPage() {
 }
 
 export default SignupPage;
+
