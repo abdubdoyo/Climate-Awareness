@@ -14,17 +14,7 @@ const Container = styled.div`
 `;
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('isAuthenticated') === 'true');
-
-
-  const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    setIsAuthenticated(false);
-  };
-
-  useEffect(() => {
-    setIsAuthenticated(localStorage.getItem('isAuthenticated') === 'true');
-  }, []);
+  
 
   return (
     <Router>
