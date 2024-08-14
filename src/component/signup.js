@@ -3,24 +3,38 @@ import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
 
 
 function SignupPage( ) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-    } else {
-      setError('');
-      console.log('Username:', username);
-      console.log('Password:', password);
+    const response = await fetch('http://localhost:3000/signup',{
+      method: 'POST',
+      headers: {
+        'Content-Typer': 'application/json',
+      },
+      body: JSON.stringify({
+        user:{
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        },
+      }),
+    });
 
-      // Navigate to the homepage after successful sign-up
+    const data= await response.json();
+
+    if (response.ok){
+      setMessage('Signup successful');
       navigate('/');
+    }else{
+      const errorMessage = data.errors ? data.errors.join(', ') : 'Signup failed due to unknown error';
+      setMessage(`Signup failed: ${errorMessage}`);
     }
+
   };
 
 
@@ -41,10 +55,9 @@ function SignupPage( ) {
           <label htmlFor="username">EMAIL:</label><br />
           <input
             type="text"
-            id="username"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           /><br />
           <label htmlFor="password">PASSWORD:</label><br />
@@ -61,15 +74,15 @@ function SignupPage( ) {
             type="password"
             id="confirm-password"
             name="confirm-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
             required
           /><br /><br />
-          <Link to="/">
+
           <button type="submit" >SIGN UP</button>
-          </Link>
+          <p>{message}</p>
         </form>
-        {error && <p className="error-message">{error}</p>}
+
       </div>
     </div>
   );
