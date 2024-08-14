@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {useNavigate, Link } from 'react-router-dom';
 
-const HtmlContent = ({ onLogin }) => {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = {};
 
-    if (!email) {
-      newErrors.email = 'Email is required';
-    }
-    if (!password) {
-      newErrors.password = 'Password is required';
-    }
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, password}),
+    });
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+    const data = await response.json();
+    if (response.ok){
+      setMessage('Login successful:', data);
+      navigate('/');
+    }else{
+      const errorMessage = Array.isArray(data.errors)
+      ? data.errors.join(', ')
+      : 'Signup failed due to unknown error';
+      setMessage(`Signup failed: ${errorMessage}`);
 
-    onLogin();
+    }
   };
 
   return (
@@ -48,7 +54,7 @@ const HtmlContent = ({ onLogin }) => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          {errors.email && <p className="error">{errors.email}</p>}
+           <p className="error">{message.includes('email') ? message : ''}</p>
 
           <label htmlFor="password">PASSWORD</label>
           <input
@@ -59,10 +65,10 @@ const HtmlContent = ({ onLogin }) => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          {errors.password && <p className="error">{errors.password}</p>}
-          <Link to="/">
+          <p className="error">{message.includes('password') ? message : ''}</p>
+
           <button type="submit">LOGIN</button>
-          </Link>
+          <p>{message}</p>
 
         </form>
         <a href="/forgot-password" className="forgot-password">Forgot Password?</a>
@@ -72,5 +78,5 @@ const HtmlContent = ({ onLogin }) => {
   );
 };
 
-export default HtmlContent;
+export default Login;
 

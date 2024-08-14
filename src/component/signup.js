@@ -14,7 +14,7 @@ function SignupPage( ) {
     const response = await fetch('http://localhost:3000/signup',{
       method: 'POST',
       headers: {
-        'Content-Typer': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user:{
@@ -54,8 +54,8 @@ function SignupPage( ) {
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">EMAIL:</label><br />
           <input
-            type="text"
-            name="username"
+            type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
