@@ -32,7 +32,7 @@ const Navbar = () => {
 
     useEffect(() => {
       const token = localStorage.getItem('authToken');
-      console.log('Token', token);
+
       if (token){
         setIsLoggedIn(true);
       }
@@ -45,7 +45,9 @@ const Navbar = () => {
   const goToLogIn = () => {
     navigate('/');
   };
-
+  const goTochat = () => {
+    navigate('/chat');
+  }
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     setIsLoggedIn(false);
@@ -67,7 +69,9 @@ const Navbar = () => {
             Log in
           </Button>
         )}
-
+        <Button className="btn btn-outline-success me-2" type="button" onClick={goTochat}>
+          Chat bot
+        </Button>
       </Form>
     </Nav>
   );

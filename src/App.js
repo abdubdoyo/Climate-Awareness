@@ -5,6 +5,8 @@ import Login from './component/login'; // Your login component
 import SignUp from './component/signup'; // Your sign-up component
 import Homepage from './component/Homepage';
 import styled from 'styled-components';
+import Chatbot from './component/Chatbot';
+import { Navigate } from 'react-router-dom';
 
 const Container = styled.div`
   background-color: #dde5b6;
@@ -13,6 +15,11 @@ const Container = styled.div`
   font-family: 'Arial, sans-serif';
 `;
 
+const PrivateRoute = ({ children }) => {
+  const authToken = localStorage.getItem('authToken');
+  return authToken ? children : <Navigate to="/" />;
+};
+
 function App() {
 
 
@@ -20,9 +27,10 @@ function App() {
     <Router>
       <Container>
         <Routes>
-          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Homepage/>} />
+          <Route path="/home" element={<PrivateRoute><Homepage/></PrivateRoute>} />
+          <Route path="/chat" element={<PrivateRoute><Chatbot/></PrivateRoute>}/>
         </Routes>
       </Container>
 
