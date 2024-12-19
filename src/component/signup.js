@@ -11,7 +11,7 @@ function SignupPage( ) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/signup',{
+    const response = await fetch("http://127.0.0.1:4000/signup",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,8 +28,9 @@ function SignupPage( ) {
     const data= await response.json();
 
     if (response.ok){
+      localStorage.setItem('authToken', data.token);
       setMessage('Signup successful');
-      navigate('/');
+      navigate('/home');
     }else{
       const errorMessage = data.errors ? data.errors.join(', ') : 'Signup failed due to unknown error';
       setMessage(`Signup failed: ${errorMessage}`);
@@ -80,6 +81,7 @@ function SignupPage( ) {
           /><br /><br />
 
           <button type="submit" >SIGN UP</button>
+          <p>Already a member?  <Link to="/">Login</Link></p>
           <p>{message}</p>
         </form>
 

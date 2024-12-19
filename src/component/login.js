@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch("http://127.0.0.1:4000/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,8 +20,9 @@ function Login() {
 
     const data = await response.json();
     if (response.ok){
+      localStorage.setItem('authToken', data.token);
       setMessage('Login successful:', data);
-      navigate('/');
+      navigate('/home');
     }else{
       const errorMessage = Array.isArray(data.errors)
       ? data.errors.join(', ')

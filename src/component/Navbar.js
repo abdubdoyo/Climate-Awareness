@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,22 +28,46 @@ const Button = styled.button`
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn]= useState(false);
+
+    useEffect(() => {
+      const token = localStorage.getItem('authToken');
+      console.log('Token', token);
+      if (token){
+        setIsLoggedIn(true);
+      }
+    },[]);
+
     const scrollToQuestionnaire = () => {
     document.getElementById('questionnaire-section').scrollIntoView({ behavior: 'smooth' });
   };
+
   const goToLogIn = () => {
-    navigate('/login');
+    navigate('/');
   };
-  
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setIsLoggedIn(false);
+    navigate('/');
+  }
+
   return (
     <Nav className="navbar bg-body-dde5b6">
       <Form className="container-fluid justify-content-start">
         <Button className="btn btn-outline-success me-2" type="button" onClick={scrollToQuestionnaire}>
           Calculate Your Footprint
         </Button>
-        <Button className="btn btn-outline-success me-2" type="button" onClick={goToLogIn}>
-          Log in
-        </Button>
+        {isLoggedIn ? (
+          <Button className="btn btn-outline-success me-2" type="button" onClick={handleLogout}>
+            Log out
+          </Button>
+        ): (
+          <Button className="btn btn-outline-success me-2" type="button" onClick={goToLogIn}>
+            Log in
+          </Button>
+        )}
+
       </Form>
     </Nav>
   );

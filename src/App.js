@@ -1,7 +1,7 @@
 import React  from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import HtmlContent from './component/login'; // Your login component
+import Login from './component/login'; // Your login component
 import SignUp from './component/signup'; // Your sign-up component
 import Homepage from './component/Homepage';
 import styled from 'styled-components';
@@ -14,15 +14,15 @@ const Container = styled.div`
 `;
 
 function App() {
-  
+
 
   return (
     <Router>
       <Container>
         <Routes>
-          <Route path="/login" element={<HtmlContent />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Homepage/>} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Homepage/>} />
         </Routes>
       </Container>
 
