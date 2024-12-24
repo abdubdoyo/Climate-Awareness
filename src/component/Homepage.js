@@ -3,9 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import carbonFootprintImg from '../assets/carbon_footprint.png';
 import reduceFootprintImg from '../assets/reduce_footprint.png';
-import backgroundVideo from '../assets/background_video.mp4'; 
-import Questionnaire from './Questionnaire';  
+import backgroundVideo from '../assets/background_video.mp4';
+import Questionnaire from './Questionnaire';
 import Navbar from './Navbar';
+import Chatbot from './Chatbot';
 
 const Container = styled.div`
   display: flex;
@@ -14,9 +15,9 @@ const Container = styled.div`
   background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto; 
+  overflow-y: auto;
 `;
 
 const HeroSection = styled.section`
@@ -119,7 +120,10 @@ const Homepage = () => {
       <Section id="questionnaire-section">
         <Subtitle>Calculate Your Carbon Footprint</Subtitle>
         <Questionnaire />
+        
+        <Chatbot/>
       </Section>
+
     </Container>
   );
 };

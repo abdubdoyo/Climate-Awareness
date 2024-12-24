@@ -4,15 +4,15 @@ const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
 
-  const sendMessage = async () => {
+   const sendMessage = async () => {
     if (!userMessage.trim()) return;
 
     // Append user message to chat history
-    setChatHistory([...chatHistory, { sender: 'user', message: userMessage }]);
+    setChatHistory((prev) => [...prev, { sender: 'user', message: userMessage }]);
 
     // Call the Rails API
     try {
-      const response = await fetch('/api/v1/chatbot/ask', {
+      const response = await fetch('http://127.0.0.1:4000/api/v1/chatbot/ask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -28,21 +28,22 @@ const Chatbot = () => {
        const botReply = data.reply;
 
       // Append bot reply to chat history
-      setChatHistory((prevChatHistory) => [
-        ...prevChatHistory,
-        { sender: 'user', message: userMessage },
+      setChatHistory((prev) => [
+        ...prev,
         { sender: 'bot', message: botReply },
       ]);
     } catch (error) {
       console.error("Error communicating with chatbot:", error);
+      setChatHistory((prev) => [...prev, { sender: 'bot', message: 'Error: unable to fetch reply.'}])
     }
 
     setUserMessage('');
   };
 
   return (
-    <div>
+    <div className='chat-container'>
       <div className="chat-window">
+        <h2>Chat AI</h2>
         {chatHistory.map((chat, index) => (
           <div key={index} className={chat.sender}>
             <strong>{chat.sender === 'user' ? 'You: ' : 'Bot: '}</strong>
