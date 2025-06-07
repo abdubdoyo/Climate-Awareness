@@ -6,7 +6,6 @@ import reduceFootprintImg from '../assets/reduce_footprint.png';
 import backgroundVideo from '../assets/background_video.mp4';
 import Questionnaire from './Questionnaire';
 import Navbar from './Navbar';
-import Chatbot from './Chatbot';
 
 const Container = styled.div`
   display: flex;
@@ -120,8 +119,7 @@ const Homepage = () => {
       <Section id="questionnaire-section">
         <Subtitle>Calculate Your Carbon Footprint</Subtitle>
         <Questionnaire />
-        
-        <Chatbot/>
+
       </Section>
 
     </Container>

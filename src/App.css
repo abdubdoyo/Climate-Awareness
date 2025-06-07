@@ -456,9 +456,9 @@ body {
 .chat-container{
   position: fixed;
   top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 300px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
   max-height: 500px;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -471,7 +471,8 @@ body {
 .chat-window {
   border: 1px solid #ccc;
   padding: 10px;
-  height: 200px;
+  height: 400px;
+  width: 500px;
   overflow-y: auto;
   background-color: #faf9f9;
 }

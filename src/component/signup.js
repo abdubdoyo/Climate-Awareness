@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, Link } from 'react-router-dom';
 
 
 function SignupPage( ) {
@@ -9,32 +9,46 @@ function SignupPage( ) {
   const [message, setMessage] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://127.0.0.1:4000/signup",{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user:{
-          email,
-          password,
-          password_confirmation: passwordConfirmation,
-        },
-      }),
-    });
 
-    const data= await response.json();
-
-    if (response.ok){
-      localStorage.setItem('authToken', data.token);
-      setMessage('Signup successful');
-      navigate('/home');
-    }else{
-      const errorMessage = data.errors ? data.errors.join(', ') : 'Signup failed due to unknown error';
-      setMessage(`Signup failed: ${errorMessage}`);
+    if(password !== passwordConfirmation){
+      setMessage("Passwords do not match");
+      return;
     }
+    
+    try{
+      const response = await fetch("http://127.0.0.1:3000/signup",{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user:{
+            email,
+            password,
+            password_confirmation: passwordConfirmation,
+          },
+        }),
+      });
+      const data= await response.json();
+
+      if (response.ok){
+        localStorage.setItem('authToken', data.token);
+        setMessage('Signup successful');
+        navigate('/home');
+      }else{
+        const errorMessage = data.errors ? data.errors.join(', ') : 'Signup failed due to unknown error';
+        setMessage(`Signup failed: ${errorMessage}`);
+      }
+
+    }catch(error){
+      setMessage("Network error. Please try again later");
+    }
+
+
 
   };
 
@@ -47,13 +61,10 @@ function SignupPage( ) {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="content">
-
-      </div>
       <div className="signup-container">
         <h2>S I G N U P</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">EMAIL:</label><br />
+          <label htmlFor="email">EMAIL:</label><br />
           <input
             type="email"
             name="email"

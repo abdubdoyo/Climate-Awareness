@@ -27,7 +27,7 @@ Integration of Diverse Technologies: Combining React with ruby on rails required
 Responsive Design: Ensuring that the application was accessible and visually appealing on various devices and screen sizes involved meticulous CSS work and testing.
 
 
-Insipiration
+Inspiration
 The inspiration for creating a climate awareness website stems from the urgent need to address the global climate crisis and the belief that education and community action can drive significant change.Some key motivations were:
 
 Increasing Climate Change Awareness
@@ -54,5 +54,5 @@ using ruby on rails as our backend.
 Accomplishments that we're proud of:
 
 User Interface: We created a nice looking User interface even though that my team and I have little to no experience in building a website with react.
-Carbon Footprint Calculator: We are also pround of how our carbon footprint calculator
+Carbon Footprint Calculator: We are also prond of how our carbon footprint calculator
 functionality has worked out.

@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://127.0.0.1:4000/login", {
+    const response = await fetch("http://127.0.0.1:3000/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -26,8 +26,8 @@ function Login() {
     }else{
       const errorMessage = Array.isArray(data.errors)
       ? data.errors.join(', ')
-      : 'Signup failed due to unknown error';
-      setMessage(`Signup failed: ${errorMessage}`);
+      : 'Login failed due to unknown error';
+      setMessage(`Login failed: ${errorMessage}`);
 
     }
   };
